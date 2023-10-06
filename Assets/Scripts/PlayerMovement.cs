@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private InputAction _jumpAction;
     private Rigidbody2D _rigidbody;
 
+    private PlayerInputSystem _input;
+
     public bool switchMovementType;
     [Header("Movement")]
 
@@ -28,7 +30,9 @@ public class PlayerMovement : MonoBehaviour
         _moveAction = _playerInput.actions.FindAction("Move");
         _jumpAction = _playerInput.actions.FindAction("Jump");
         _rigidbody = GetComponent<Rigidbody2D>();
-
+        _input = new PlayerInputSystem();
+        _input.Player.Enable();
+        
         moveSpeed = walkSpeed;
     }
 
