@@ -8,7 +8,7 @@ public class DoDamage : MonoBehaviour
 
     public void DamageTarget(GameObject target)
     {
-        if (target.TryGetComponent<Life>(out var life))
+        if (target.TryGetCommponentInLineage<Life>(out var life))
         {
             life.Damage(Amount);
         }

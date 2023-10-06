@@ -31,7 +31,7 @@ public class DoPushAway : MonoBehaviour
 
     private void Push(GameObject target, Vector2 direction)
     {
-        if (target.TryGetComponent<Rigidbody2D>(out var rb))
+        if (target.TryGetCommponentInLineage<Rigidbody2D>(out var rb))
         {
             direction.Normalize();
             rb.AddForce(direction * Force);
