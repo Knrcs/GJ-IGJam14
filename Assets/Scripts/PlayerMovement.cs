@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private PlayerInput _playerInput;
     private InputAction _moveAction;
+    private InputAction _jumpAction;
     private Rigidbody2D _rigidbody;
 
     private PlayerInputSystem _input;
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerInput = GetComponent<PlayerInput>();
         _moveAction = _playerInput.actions.FindAction("Move");
+        _jumpAction = _playerInput.actions.FindAction("Jump");
         _rigidbody = GetComponent<Rigidbody2D>();
         _input = new PlayerInputSystem();
         _input.Player.Enable();
@@ -41,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         if (!switchMovementType)
         {
             Movement();
+            Jump();
         }
         else 
         {
@@ -73,5 +76,14 @@ public class PlayerMovement : MonoBehaviour
         //For future Knrc (make a thingy which checks how much velocity you have and limit it to a fixed ammount)
 
         _rigidbody.AddForce(new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed));
+    }
+
+    private void Jump()
+    {
+        float pressSpace = _jumpAction.ReadValue<float>();
+        if(pressSpace >= 1)
+        {
+            
+        }
     }
 }
