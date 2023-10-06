@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private PlayerInput _playerInput;
     private InputAction _moveAction;
+    private InputAction _jumpAction;
     private Rigidbody2D _rigidbody;
 
     public bool switchMovementType;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerInput = GetComponent<PlayerInput>();
         _moveAction = _playerInput.actions.FindAction("Move");
+        _jumpAction = _playerInput.actions.FindAction("Jump");
         _rigidbody = GetComponent<Rigidbody2D>();
 
         moveSpeed = walkSpeed;
@@ -74,6 +76,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-
+        float pressSpace = _jumpAction.ReadValue<float>();
+        if(pressSpace >= 1)
+        {
+            
+        }
     }
 }
