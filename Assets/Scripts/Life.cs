@@ -19,6 +19,12 @@ public class Life : MonoBehaviour
         Birth.Invoke();
     }
 
+    public void SetMaxHealth(int health)
+    {
+        LifeMax = health;
+        Heal(0);
+    }
+
 
     public void Damage(int amount)
     {

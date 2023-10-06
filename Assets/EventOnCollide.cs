@@ -5,22 +5,22 @@ using UnityEngine.Events;
 
 public class EventOnCollide : MonoBehaviour
 {
-    public UnityEvent<Collision2D> CollideEntered;
-    public UnityEvent<Collision2D> CollideExited;
-    public UnityEvent<Collision2D> Colliding;
+    public UnityEvent<GameObject> CollideEntered;
+    public UnityEvent<GameObject> CollideExited;
+    public UnityEvent<GameObject> Colliding;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        CollideEntered.Invoke(other);
+        CollideEntered.Invoke(other.gameObject);
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        CollideExited.Invoke(other);
+        CollideExited.Invoke(other.gameObject);
     }
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        Colliding.Invoke(other);
+        Colliding.Invoke(other.gameObject);
     }
 }
