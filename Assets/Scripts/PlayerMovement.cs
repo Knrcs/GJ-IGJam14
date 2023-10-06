@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         if (!switchMovementType)
         {
             Movement();
+            Jump();
         }
         else 
         {
@@ -69,5 +70,10 @@ public class PlayerMovement : MonoBehaviour
         //For future Knrc (make a thingy which checks how much velocity you have and limit it to a fixed ammount)
 
         _rigidbody.AddForce(new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed));
+    }
+
+    private void Jump()
+    {
+
     }
 }
