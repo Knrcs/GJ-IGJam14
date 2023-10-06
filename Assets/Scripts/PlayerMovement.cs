@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Gravity")]
     public float gravitySpeed = 2f;
     public float rigidbodyGravityScale = 1f;
+    public float maxRigidbodyVelocity = 3f;
 
     
     // Start is called before the first frame update
@@ -64,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = _moveAction.ReadValue<Vector2>();
         float horizontalInput = input.x;
         float verticalInput = input.y;
+        
+        //For future Knrc (make a thingy which checks how much velocity you have and limit it to a fixed ammount)
 
         _rigidbody.AddForce(new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed));
     }
