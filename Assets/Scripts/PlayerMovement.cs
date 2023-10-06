@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInputSystem _input;
 
     public bool switchMovementType;
+
+    [SerializeField]private bool _playerJumped = false;
     [Header("Movement")]
 
     private float moveSpeed = 5f;
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         _input = new PlayerInputSystem();
         _input.Player.Enable();
         _input.Player.Jump.performed += Jump;
+        _input.Player.Jump.canceled += Jump_canceled;
         
         moveSpeed = walkSpeed;
     }
@@ -84,7 +87,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!switchMovementType)
         {
+            _playerJumped = true;
             _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+    private void Jump_canceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        Debug.Log("woa");
+        if (_playerJumped == false)
+        {
+        var forceEffect = context.duration;
+        _rigidbody.AddForce(Vector2.up * (jumpForce * (float)forceEffect), ForceMode2D.Impulse);
+        Debug.Log("Awa Canle");
         }
     }
 }
