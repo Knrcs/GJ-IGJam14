@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float moveSpeed = 5f;
     public float walkSpeed = 5f;
+
+    public float jumpForce = 15f;
     [Header("Gravity")]
     public float gravitySpeed = 2f;
     public float rigidbodyGravityScale = 1f;
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _input = new PlayerInputSystem();
         _input.Player.Enable();
+        _input.Player.Jump.performed += Jump;
         
         moveSpeed = walkSpeed;
     }
@@ -43,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
         if (!switchMovementType)
         {
             Movement();
-            Jump();
         }
         else 
         {
@@ -78,12 +80,11 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.AddForce(new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed));
     }
 
-    private void Jump()
+    private void Jump(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        float pressSpace = _jumpAction.ReadValue<float>();
-        if(pressSpace >= 1)
+        if(!switchMovementType)
         {
-            
+            _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 }
