@@ -56,6 +56,7 @@ public class DoDotDamage : MonoBehaviour
             }
             else
             {
+                
                 _damage = true;
             }
         }
