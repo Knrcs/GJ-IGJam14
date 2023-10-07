@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 3824857209467687809}
   - component: {fileID: 177254781627768461}
   - component: {fileID: 8382917521805388738}
+  - component: {fileID: 1166637854616283033}
+  - component: {fileID: 1736755138106170689}
+  - component: {fileID: 4131424894073613329}
   m_Layer: 0
   m_Name: BloodyTeethC
   m_TagString: Untagged
@@ -28,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5303, y: 1.433432, z: 1.5303}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1098892825
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -237054290, guid: 82c294afd5ca99c46b2e35c191614eaf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -132,3 +135,76 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1166637854616283033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009193394930424066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e205c698cea15d44db3cb0bf4a2873d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollideEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1736755138106170689}
+        m_TargetAssemblyTypeName: DoDamage, Assembly-CSharp
+        m_MethodName: DamageTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4131424894073613329}
+        m_TargetAssemblyTypeName: DoPushAway, Assembly-CSharp
+        m_MethodName: PushFromThis
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CollideExited:
+    m_PersistentCalls:
+      m_Calls: []
+  Colliding:
+    m_PersistentCalls:
+      m_Calls: []
+  OnlyPlayer: 1
+--- !u!114 &1736755138106170689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009193394930424066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97778b10d36838e458d90b89bd0b6b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Amount: 1
+--- !u!114 &4131424894073613329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009193394930424066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5600a31ae05a09748af8a5ce6a052d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 300
+  Direction: {x: 0, y: 0}
