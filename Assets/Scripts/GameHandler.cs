@@ -113,6 +113,7 @@ public class GameHandler : Singleton<GameHandler>
 
         State = GameState.GameOver;
         GameEndUi.Lose();
+        Life.Invulnerable = true;
     }
 
     public void Win()
@@ -124,5 +125,6 @@ public class GameHandler : Singleton<GameHandler>
 
         State = GameState.GameOver;
         GameEndUi.Win();
+        Life.Invulnerable = true;
     }
 }

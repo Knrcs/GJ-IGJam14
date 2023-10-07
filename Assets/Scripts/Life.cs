@@ -13,6 +13,8 @@ public class Life : MonoBehaviour
     public UnityEvent Died;
     public bool Dead;
 
+    public bool Invulnerable;
+
     private void Awake()
     {
         GameHandler.Instance.GameStarted.AddListener(GameStart);
@@ -34,6 +36,11 @@ public class Life : MonoBehaviour
     public void Damage(int amount)
     {
         if (Dead)
+        {
+            return;
+        }
+
+        if (Invulnerable && amount > 0)
         {
             return;
         }
