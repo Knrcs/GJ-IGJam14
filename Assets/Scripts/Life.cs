@@ -13,7 +13,12 @@ public class Life : MonoBehaviour
     public UnityEvent Died;
     public bool Dead;
 
-    private void Start()
+    private void Awake()
+    {
+        GameHandler.Instance.GameStarted.AddListener(GameStart);
+    }
+
+    private void GameStart()
     {
         LifeCurrent = LifeMax;
         Birth.Invoke();
