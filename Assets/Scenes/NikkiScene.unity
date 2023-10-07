@@ -1872,6 +1872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shards_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7115608439617862004, guid: 09eee718b5ea4b54d868d28e031ae81f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1938,67 +1942,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79df9258319715b4ea1b0c14b53af471, type: 3}
---- !u!1001 &9054593323361323523
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022397360785442924, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215057774728948496, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_Name
-      value: Heart Collectible
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215057774728948496, guid: d515ad09665629e48aa0211e87780846, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d515ad09665629e48aa0211e87780846, type: 3}
 --- !u!1001 &9158867001441325826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2088,7 +2031,6 @@ SceneRoots:
   - {fileID: 2498391390789980267}
   - {fileID: 9158867001441325826}
   - {fileID: 7578438923450371518}
-  - {fileID: 9054593323361323523}
   - {fileID: 7299041982503940244}
   - {fileID: 7451275672351127303}
   - {fileID: 5134416701927546527}
