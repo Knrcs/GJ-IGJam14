@@ -48,9 +48,6 @@ TagManager:
   - name: BG2
     uniqueID: 946043691
     locked: 0
-  - name: Pretties
-    uniqueID: 3238992841
-    locked: 0
   - name: Walls
     uniqueID: 3590284205
     locked: 0
@@ -59,6 +56,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1252633399
+    locked: 0
+  - name: Pretties
+    uniqueID: 3238992841
     locked: 0
   - name: Collectible
     uniqueID: 3164944945
