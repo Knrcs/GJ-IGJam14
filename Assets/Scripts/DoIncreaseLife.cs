@@ -13,12 +13,10 @@ public class DoIncreaseLife : MonoBehaviour
         {
             if (FullHeal)
             {
-                Debug.Log("Heal Full");
                 life.Heal(life.LifeMax);
             }
             else
             {
-                Debug.Log($"Heal Amount {Amount}");
                 life.Heal(Amount);
             }
         }
@@ -28,7 +26,6 @@ public class DoIncreaseLife : MonoBehaviour
     {
         if (target.TryGetCommponentInLineage<Life>(out var life))
         {
-            Debug.Log($"Set maxlife Amount {Amount}");
             life.SetMaxHealth(life.LifeMax + Amount);
             IncreaseCurrentLife(target); //Always heal same amount that given to maxlife
         }
