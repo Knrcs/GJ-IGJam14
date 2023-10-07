@@ -6,12 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementDream : MonoBehaviour
 {
-    [Header("Gravity")]
-    public float gravitySpeed = 2f;
-    public float rigidbodyGravityScale = 1f; //TODO
-    public float maxRigidbodyVelocity = 3f; //TODO
-
-    private float moveSpeed = 5f;
+    public float FloatMovementForce = 2f;
+    public float Drag = 0.05f;
+    public float MaxVelocity = 3f;
 
     private PlayerInput playerInput;
     private InputAction moveAction;
@@ -51,11 +48,16 @@ public class PlayerMovementDream : MonoBehaviour
     {
         //Setup Physics
         rb.gravityScale = 0f;
-        moveSpeed = gravitySpeed;
+        rb.drag = Drag;
 
         //Player Floaty Movement
-        rb.AddForce(new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed));
+        rb.AddForce(moveInput * FloatMovementForce);
 
-        //TODO: make a thingy which checks how much velocity you have and limit it to a fixed ammount
+        //Clamp float speed  
+        if (rb.velocity.magnitude > MaxVelocity)
+        {
+            rb.velocity = rb.velocity.normalized;
+            rb.velocity *= MaxVelocity;
+        }
     }
 }

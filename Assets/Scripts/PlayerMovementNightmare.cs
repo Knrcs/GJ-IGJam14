@@ -7,18 +7,16 @@ using UnityEngine.InputSystem;
 public class PlayerMovementNightmare : MonoBehaviour
 {
     [Header("Movement")]
-    public float walkSpeed = 5f;
+    public float WalkSpeed = 5f;
 
     [Header("Jump")]
-    public float jumpCancelSpeed = 0.1f;
-    public float jumpForce = 15f;
-    public float rigidbodyGravityScale = 1f;
+    public float JumpCancelSpeed = 0.1f;
+    public float JumpForce = 5f;
+    public float RigidbodyGravityScale = 1f;
 
     [Header("GroundCheck")]
     public Collider2D GroundCollider;
     public ContactFilter2D GroundColliderFilter;
-
-    private float currentMoveSpeed = 5f;
 
     private PlayerInput playerInput;
     private InputAction moveAction;
@@ -32,13 +30,10 @@ public class PlayerMovementNightmare : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
-        rb = GetComponent<Rigidbody2D>();
-        inputSystem = new PlayerInputSystem();
-        inputSystem.Player.Enable();
-        inputSystem.Player.Jump.performed += Jump;
-        inputSystem.Player.Jump.canceled += Jump_canceled;
     }
 
     private void FixedUpdate()
@@ -52,10 +47,23 @@ public class PlayerMovementNightmare : MonoBehaviour
         GetInput();
     }
 
-    private void OnDestroy()
+    private void OnEnable()
+    {
+        if (inputSystem == null)
+        {
+            inputSystem = new PlayerInputSystem();
+        }
+
+        inputSystem.Player.Enable();
+        inputSystem.Player.Jump.performed += Jump;
+        inputSystem.Player.Jump.canceled += Jump_canceled;
+    }
+
+    private void OnDisable()
     {
         if (inputSystem != null)
         {
+            inputSystem.Player.Disable();
             inputSystem.Player.Jump.performed -= Jump;
             inputSystem.Player.Jump.canceled -= Jump_canceled;
         }
@@ -77,19 +85,19 @@ public class PlayerMovementNightmare : MonoBehaviour
     private void Movement()
     {
         //set Variables
-        currentMoveSpeed = walkSpeed;
-        rb.gravityScale = rigidbodyGravityScale;
+        rb.gravityScale = RigidbodyGravityScale;
+        rb.drag = 0f;
         //Player Horizontal Movement
         float horizontalInput = moveInput.x;
 
-        rb.velocity = new Vector2(horizontalInput * currentMoveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(horizontalInput * WalkSpeed, rb.velocity.y);
     }
 
     private void Jump(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         if (isGrounded)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
         }
     }
 
@@ -98,7 +106,7 @@ public class PlayerMovementNightmare : MonoBehaviour
         if (!isGrounded)
         {
             var v = rb.velocity;
-            v.y = Mathf.Min(v.y, jumpCancelSpeed);
+            v.y = Mathf.Min(v.y, JumpCancelSpeed);
             rb.velocity = v;
         }
     }
