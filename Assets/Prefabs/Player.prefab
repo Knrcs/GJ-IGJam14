@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 2008386530315204784}
   - component: {fileID: 5885633972558034242}
   - component: {fileID: 4028875033280156855}
+  - component: {fileID: 3405988735723527723}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -336,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkSpeed: 5
   JumpCancelSpeed: 0.1
-  JumpForce: 5
+  JumpForce: 7
   RigidbodyGravityScale: 1
   MinVelocityY: -8
   GroundCollider: {fileID: 9160637405617158966}
@@ -381,6 +382,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4944a7388a1a19642882710a97faabbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3405988735723527723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7952197662721581768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1480f86f5cc15ee42b0b3b571040b961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8210280414659971613
 GameObject:
   m_ObjectHideFlags: 0
