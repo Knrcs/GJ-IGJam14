@@ -14,6 +14,9 @@ public class PlayerMovementNightmare : MonoBehaviour
     public float JumpForce = 5f;
     public float RigidbodyGravityScale = 1f;
 
+    [Header("Gravity")]
+    public float MinVelocityY = -2f;
+
     [Header("GroundCheck")]
     public Collider2D GroundCollider;
     public ContactFilter2D GroundColliderFilter;
@@ -90,7 +93,8 @@ public class PlayerMovementNightmare : MonoBehaviour
         //Player Horizontal Movement
         float horizontalInput = moveInput.x;
 
-        rb.velocity = new Vector2(horizontalInput * WalkSpeed, rb.velocity.y);
+        var yVelocity = Mathf.Max(rb.velocity.y, MinVelocityY);
+        rb.velocity = new Vector2(horizontalInput * WalkSpeed, yVelocity);
     }
 
     private void Jump(UnityEngine.InputSystem.InputAction.CallbackContext context)
