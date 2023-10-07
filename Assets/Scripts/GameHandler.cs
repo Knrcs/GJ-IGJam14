@@ -15,7 +15,10 @@ public class GameHandler : Singleton<GameHandler>
     public UnityEvent GameAwoken;
     public UnityEvent GameStarted;
 
+    public float OffsetYDeathFromAbove;
+
     public GameObject Player { get; private set; }
+    public GameObject DeathFromAbove { get; private set; }
     public PlayerMovementDream MovementDream { get; private set; }
     public PlayerMovementNightmare MovementNightmare { get; private set; }
     public ShardHighscore Shards { get; private set; }
@@ -49,6 +52,9 @@ public class GameHandler : Singleton<GameHandler>
         GameEndUi = GameEndUiObject.GetComponent<GameEndUi>();
         Debug.Assert(GameEndUi != null, "GameEndUI Component not found on GameEndUIObject!");
 
+        DeathFromAbove = GameObject.FindGameObjectWithTag("DeathFromAbove");
+        Debug.Assert(DeathFromAbove != null, "DeathFromAbove not found!");
+
         GameEndUiObject.SetActive(false);
 
         MaxShards = FindObjectsOfType<Shard>().Count();
@@ -73,6 +79,15 @@ public class GameHandler : Singleton<GameHandler>
         State = GameState.Dream;
         MovementNightmare.enabled = false;
         MovementDream.enabled = true;
+        DeathFromAbove.SetActive(false);
+    }
+
+    private void ResetDeathFromAbove()
+    {
+        var posY = Player.transform.position.y + OffsetYDeathFromAbove;
+        var newPos = DeathFromAbove.transform.position;
+        newPos.y = posY;
+        DeathFromAbove.transform.position = newPos;
     }
 
     public void StartNightmare()
@@ -85,6 +100,8 @@ public class GameHandler : Singleton<GameHandler>
         State = GameState.Nightmare;
         MovementNightmare.enabled = true;
         MovementDream.enabled = false;
+        DeathFromAbove.SetActive(true);
+        ResetDeathFromAbove();
     }
 
     public void Lose()
