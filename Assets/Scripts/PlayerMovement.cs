@@ -1,23 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private PlayerInput _playerInput;
-    private InputAction _moveAction;
-    private InputAction _jumpAction;
-    private Rigidbody2D _rigidbody;
-
-    private PlayerInputSystem _input;
-
     public bool switchMovementType;
+    public Collider2D GroundCollider;
+    public ContactFilter2D GroundColliderFilter;
 
-    [SerializeField]private bool _playerJumped = false;
     [Header("Movement")]
 
-    private float moveSpeed = 5f;
+    public float jumpCancelSpeed = 0.1f;
     public float walkSpeed = 5f;
 
     public float jumpForce = 15f;
@@ -26,20 +21,45 @@ public class PlayerMovement : MonoBehaviour
     public float rigidbodyGravityScale = 1f;
     public float maxRigidbodyVelocity = 3f;
 
-    
+    private float moveSpeed = 5f;
+
+    private PlayerInput _playerInput;
+    private InputAction _moveAction;
+    private Rigidbody2D _rigidbody;
+
+    private PlayerInputSystem _input;
+
+    private bool isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
         _moveAction = _playerInput.actions.FindAction("Move");
-        _jumpAction = _playerInput.actions.FindAction("Jump");
         _rigidbody = GetComponent<Rigidbody2D>();
         _input = new PlayerInputSystem();
         _input.Player.Enable();
         _input.Player.Jump.performed += Jump;
         _input.Player.Jump.canceled += Jump_canceled;
-        
-        moveSpeed = walkSpeed;
+    }
+
+    private void FixedUpdate()
+    {
+        GroundedCheck();
+    }
+
+    private void OnDestroy()
+    {
+        _input.Player.Jump.performed -= Jump;
+        _input.Player.Jump.canceled -= Jump_canceled;
+    }
+
+    private void GroundedCheck()
+    {
+        var list = new List<Collider2D>();
+        var count = GroundCollider.OverlapCollider(GroundColliderFilter, list);
+
+        isGrounded = count > 0;
     }
 
     // Update is called once per frame
@@ -50,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Movement();
         }
-        else 
+        else
         {
             GravityMovement();
         }
@@ -77,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = _moveAction.ReadValue<Vector2>();
         float horizontalInput = input.x;
         float verticalInput = input.y;
-        
+
         //For future Knrc (make a thingy which checks how much velocity you have and limit it to a fixed ammount)
 
         _rigidbody.AddForce(new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed));
@@ -85,20 +105,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        if(!switchMovementType)
+        if (isGrounded)
         {
-            _playerJumped = true;
             _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
     private void Jump_canceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        Debug.Log("woa");
-        if (_playerJumped == false)
+        if (!isGrounded)
         {
-        var forceEffect = context.duration;
-        _rigidbody.AddForce(Vector2.up * (jumpForce * (float)forceEffect), ForceMode2D.Impulse);
-        Debug.Log("Awa Canle");
+            var v = _rigidbody.velocity;
+            v.y = Mathf.Min(v.y, jumpCancelSpeed);
+            _rigidbody.velocity = v;
         }
     }
 }
