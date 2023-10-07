@@ -13,7 +13,14 @@ public class Life : MonoBehaviour
     public UnityEvent Died;
     public bool Dead;
 
-    private void Start()
+    public bool Invulnerable;
+
+    private void Awake()
+    {
+        GameHandler.Instance.GameStarted.AddListener(GameStart);
+    }
+
+    private void GameStart()
     {
         LifeCurrent = LifeMax;
         Birth.Invoke();
@@ -29,6 +36,11 @@ public class Life : MonoBehaviour
     public void Damage(int amount)
     {
         if (Dead)
+        {
+            return;
+        }
+
+        if (Invulnerable && amount > 0)
         {
             return;
         }

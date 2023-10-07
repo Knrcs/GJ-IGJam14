@@ -5,11 +5,16 @@ using UnityEngine;
 
 public class LIfeUI : MonoBehaviour
 {
-    public Life Life;
+    public Life Life => GameHandler.Instance.Life;
     public TMP_Text Text;
 
+    private void Awake()
+    {
+        GameHandler.Instance.GameAwoken.AddListener(GameAwake);
+    }
+
     // Start is called before the first frame update
-    void Awake()
+    void GameAwake()
     {
         Life.Birth.AddListener(UpdateText);
         Life.Changed.AddListener(_ => UpdateText());
