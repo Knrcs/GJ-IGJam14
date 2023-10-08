@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2353451341162502516}
   - component: {fileID: 5164875218088377518}
   - component: {fileID: 161170087973199261}
-  m_Layer: 0
+  - component: {fileID: 115124242434293384}
+  m_Layer: 7
   m_Name: ShardSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1130022351
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 1493112316, guid: edb5376a1ebe82c4b8224c744fb986c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -114,7 +115,7 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -130,6 +131,52 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &115124242434293384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332479631855865721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c22de44e4ee194cb7989d8cbf21221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 478150988475983495}
+        m_TargetAssemblyTypeName: Shard, Assembly-CSharp
+        m_MethodName: GiveShard
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4896831013609146319}
+        m_TargetAssemblyTypeName: DoDestroy, Assembly-CSharp
+        m_MethodName: DestroyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerExited:
+    m_PersistentCalls:
+      m_Calls: []
+  Triggering:
+    m_PersistentCalls:
+      m_Calls: []
+  OnlyPlayer: 1
 --- !u!1 &6919767762532144908
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,10 +187,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6273089608394474049}
   - component: {fileID: 4187378102753168698}
-  - component: {fileID: 5774355681036542997}
   - component: {fileID: 4896831013609146319}
   - component: {fileID: 478150988475983495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShardA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,52 +233,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5774355681036542997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6919767762532144908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c22de44e4ee194cb7989d8cbf21221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TriggerEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 478150988475983495}
-        m_TargetAssemblyTypeName: Shard, Assembly-CSharp
-        m_MethodName: GiveShard
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4896831013609146319}
-        m_TargetAssemblyTypeName: DoDestroy, Assembly-CSharp
-        m_MethodName: DestroyThis
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  TriggerExited:
-    m_PersistentCalls:
-      m_Calls: []
-  Triggering:
-    m_PersistentCalls:
-      m_Calls: []
-  OnlyPlayer: 1
 --- !u!114 &4896831013609146319
 MonoBehaviour:
   m_ObjectHideFlags: 0
