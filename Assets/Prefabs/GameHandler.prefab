@@ -52,7 +52,7 @@ MonoBehaviour:
       m_Calls: []
   NightmareSegmentsParent: {fileID: 0}
   DreamSegmentsParent: {fileID: 0}
-  OffsetYDeathFromAbove: 10
+  OffsetYDeathFromAbove: 13
   NightmareStarted:
     m_PersistentCalls:
       m_Calls: []

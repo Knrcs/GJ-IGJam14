@@ -345,7 +345,7 @@ MonoBehaviour:
   JumpCancelSpeed: 0.1
   JumpForce: 7
   RigidbodyGravityScale: 1
-  MinVelocityY: -8
+  MinVelocityY: -12
   GroundCollider: {fileID: 9160637405617158966}
   GroundColliderFilter:
     useTriggers: 1
