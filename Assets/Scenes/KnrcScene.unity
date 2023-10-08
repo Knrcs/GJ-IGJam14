@@ -952,6 +952,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathFromAbove
       objectReference: {fileID: 0}
+    - target: {fileID: 6518693638283150098, guid: 25acfd2518d2ef549b6d6d1a01e34695, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1757,7 +1761,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2118,6 +2122,7 @@ MonoBehaviour:
       m_Calls: []
   Dead: 0
   Invulnerable: 0
+  sFXManager: {fileID: 0}
 --- !u!4 &1149701257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 78410443442623558, guid: 330f63550707dbe4b93eb153a51b076f, type: 3}
