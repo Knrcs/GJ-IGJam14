@@ -30,7 +30,7 @@ public class GameEndUi : MonoBehaviour
 
     public IEnumerator ShowButtonsDelayed()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         ButtonParent.SetActive(true);
     }
 
@@ -51,9 +51,6 @@ public class GameEndUi : MonoBehaviour
 
     public void Exit()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
-        Application.Quit();
+        SceneManager.LoadScene("TitleScreen");
     }
 }
