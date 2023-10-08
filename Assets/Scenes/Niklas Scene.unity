@@ -946,14 +946,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1386272822308149173, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1386272822308149173, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1252633399
-      objectReference: {fileID: 0}
     - target: {fileID: 4619589749317257710, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2607571
@@ -1159,6 +1151,10 @@ PrefabInstance:
     - target: {fileID: 6518693638283150098, guid: 25acfd2518d2ef549b6d6d1a01e34695, type: 3}
       propertyPath: m_Name
       value: DeathFromAbove
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518693638283150098, guid: 25acfd2518d2ef549b6d6d1a01e34695, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4933,6 +4929,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeMax: 5
   LifeCurrent: 1
+  iframeTime: 0
+  iframe: 0
+  iframeResistance: 0
   Birth:
     m_PersistentCalls:
       m_Calls: []
