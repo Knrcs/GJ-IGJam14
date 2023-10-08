@@ -181,6 +181,7 @@ MonoBehaviour:
   Colliding:
     m_PersistentCalls:
       m_Calls: []
+  OnlyPlayer: 1
 --- !u!114 &3068230684693141447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Amount: 1
+  iframeTime: 0.5
 --- !u!114 &6386812577731898183
 MonoBehaviour:
   m_ObjectHideFlags: 0

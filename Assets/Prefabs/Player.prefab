@@ -265,6 +265,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeMax: 3
   LifeCurrent: 3
+  iframeTime: 0.75
+  iframe: 0
+  iframeResistance: 1
   Birth:
     m_PersistentCalls:
       m_Calls: []
@@ -299,6 +302,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   Dead: 0
+  Invulnerable: 0
 --- !u!114 &1718287658954571698
 MonoBehaviour:
   m_ObjectHideFlags: 0

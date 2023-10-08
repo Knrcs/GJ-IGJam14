@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,10 @@ public class Life : MonoBehaviour
 {
     public int LifeMax = 2;
     public int LifeCurrent = 1;
+
+    public float iframeTime;
+    public float iframe;
+    public bool iframeResistance;
 
     public UnityEvent Birth;
     public UnityEvent<int> Changed;
@@ -18,6 +23,7 @@ public class Life : MonoBehaviour
     private void Awake()
     {
         GameHandler.Instance.GameStarted.AddListener(GameStart);
+        iframe = iframeTime;
     }
 
     private void GameStart()
@@ -60,5 +66,20 @@ public class Life : MonoBehaviour
     public void Heal(int amount)
     {
         Damage(-amount);
+    }
+
+    private void Update()
+    {
+        Iframes();
+    }
+
+    private void Iframes()
+    {
+        iframe -= Time.deltaTime;
+        if (iframe < 0 && iframeResistance)
+        {
+            Debug.Log("Iframe protection off");
+            iframeResistance = false;
+        }
     }
 }
