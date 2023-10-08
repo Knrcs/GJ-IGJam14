@@ -17,6 +17,7 @@ public class PlayerMovementDream : MonoBehaviour
     private PlayerInputSystem inputSystem;
 
     private Vector2 moveInput;
+    private Vector2 _tempScale;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class PlayerMovementDream : MonoBehaviour
     void Update()
     {
         GetInput();
+        HandleFacingDirection();
     }
 
     private void FixedUpdate()
@@ -42,6 +44,18 @@ public class PlayerMovementDream : MonoBehaviour
     {
         moveInput = moveAction.ReadValue<Vector2>();
     }
+
+            void HandleFacingDirection()
+        {
+            _tempScale = transform.localScale;
+
+            if (moveInput.x > 0)
+                _tempScale.x = Mathf.Abs(_tempScale.x);
+            else if (moveInput.x < 0)
+                _tempScale.x = -Mathf.Abs(_tempScale.x);
+
+            transform.localScale = _tempScale;
+        }
 
 
     private void GravityMovement()
