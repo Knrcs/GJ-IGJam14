@@ -20,10 +20,13 @@ public class Life : MonoBehaviour
 
     public bool Invulnerable;
 
+    public SFXManager sFXManager;
+
     private void Awake()
     {
         GameHandler.Instance.GameStarted.AddListener(GameStart);
         iframe = iframeTime;
+        sFXManager = GetComponent<SFXManager>();
     }
 
     private void GameStart()
@@ -35,6 +38,7 @@ public class Life : MonoBehaviour
     public void SetMaxHealth(int health)
     {
         LifeMax = health;
+        sFXManager.PickupSFX();
         Heal(0);
     }
 
@@ -59,6 +63,7 @@ public class Life : MonoBehaviour
         if (LifeCurrent <= 0)
         {
             Dead = true;
+            sFXManager.WakeUpSFX();
             Died.Invoke();
         }
     }
