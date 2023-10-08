@@ -37,6 +37,7 @@ public class PlayerAnimator : MonoBehaviour
         MovementAnimation();
         JumpFallAnimation();
         OnGroundAnimation();
+        IsFloating();
     }
 
     private void MovementAnimation()
@@ -73,5 +74,17 @@ public class PlayerAnimator : MonoBehaviour
         isGrounded = count > 0;
         
         _animatior.SetBool("onGround", isGrounded);
+    }
+
+    private void IsFloating()
+    {
+        if(GetComponent<PlayerMovementDream>().isActiveAndEnabled)
+        {
+            _animatior.SetBool("isFloating", true);
+        }
+        else
+        {
+            _animatior.SetBool("isFloating", false);
+        }
     }
 }
