@@ -10,25 +10,32 @@ public class SFXManager : MonoBehaviour
 
     public void WakeUpSFX()
     {
-
+        audioSource.clip = wakeUpSFX;
     }
     public void WalkSFX()
     {
+        audioSource.clip = walkSFX;
+        audioSource.Play();
         
     }
 
     public void JumpSFX()
     {
-        
+        audioSource.clip = jumpSFX;
+        audioSource.Play();
     }
 
     public void DamageSFX()
     {
+        audioSource.clip = damageSFX;
+        audioSource.Play();
         
     }
 
     public void PickupSFX()
     {
+        audioSource.clip = pickUpSFX;
+        audioSource.Play();
         
     }
 }
