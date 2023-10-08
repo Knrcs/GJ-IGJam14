@@ -1554,7 +1554,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5114244831564435576, guid: b1e779b3156d402438e5ee7ab1896b91, type: 3}
       propertyPath: m_Name
-      value: Player_Anims
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5905343888206626688, guid: b1e779b3156d402438e5ee7ab1896b91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1595,6 +1595,10 @@ PrefabInstance:
     - target: {fileID: 5905343888206626688, guid: b1e779b3156d402438e5ee7ab1896b91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7287057107710789775, guid: b1e779b3156d402438e5ee7ab1896b91, type: 3}
+      propertyPath: m_Name
+      value: Sprite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
