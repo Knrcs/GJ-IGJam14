@@ -29,6 +29,7 @@ public class PlayerMovementNightmare : MonoBehaviour
 
     private bool isGrounded;
     private Vector2 moveInput;
+    private Vector2 _tempScale;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class PlayerMovementNightmare : MonoBehaviour
     {
         GroundedCheck();
         Movement();
+        HandleFacingDirection();
     }
 
     void Update()
@@ -84,6 +86,18 @@ public class PlayerMovementNightmare : MonoBehaviour
 
         isGrounded = count > 0;
     }
+
+                void HandleFacingDirection()
+        {
+            _tempScale = transform.localScale;
+
+            if (moveInput.x > 0)
+                _tempScale.x = Mathf.Abs(_tempScale.x);
+            else if (moveInput.x < 0)
+                _tempScale.x = -Mathf.Abs(_tempScale.x);
+
+            transform.localScale = _tempScale;
+        }
 
     private void Movement()
     {
