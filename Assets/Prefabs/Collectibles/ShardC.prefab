@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6810915941931129829}
   - component: {fileID: 5022228826333737970}
   - component: {fileID: 4752604121643551020}
-  m_Layer: 0
+  - component: {fileID: 1842277469160472561}
+  m_Layer: 7
   m_Name: ShardSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1130022351
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -621818443, guid: edb5376a1ebe82c4b8224c744fb986c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -132,6 +133,52 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1842277469160472561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3267707699107008943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c22de44e4ee194cb7989d8cbf21221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6498412438866735613}
+        m_TargetAssemblyTypeName: Shard, Assembly-CSharp
+        m_MethodName: GiveShard
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 970135798338086512}
+        m_TargetAssemblyTypeName: DoDestroy, Assembly-CSharp
+        m_MethodName: DestroyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerExited:
+    m_PersistentCalls:
+      m_Calls: []
+  Triggering:
+    m_PersistentCalls:
+      m_Calls: []
+  OnlyPlayer: 1
 --- !u!1 &5858517916258324365
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,10 +189,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5027068854998180934}
   - component: {fileID: 1112772422871892059}
-  - component: {fileID: 1004726360808722008}
   - component: {fileID: 970135798338086512}
   - component: {fileID: 6498412438866735613}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShardC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,52 +235,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1004726360808722008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5858517916258324365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c22de44e4ee194cb7989d8cbf21221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TriggerEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6498412438866735613}
-        m_TargetAssemblyTypeName: Shard, Assembly-CSharp
-        m_MethodName: GiveShard
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 970135798338086512}
-        m_TargetAssemblyTypeName: DoDestroy, Assembly-CSharp
-        m_MethodName: DestroyThis
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  TriggerExited:
-    m_PersistentCalls:
-      m_Calls: []
-  Triggering:
-    m_PersistentCalls:
-      m_Calls: []
-  OnlyPlayer: 1
 --- !u!114 &970135798338086512
 MonoBehaviour:
   m_ObjectHideFlags: 0
