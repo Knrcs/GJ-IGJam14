@@ -54,12 +54,10 @@ public class PlayerAnimator : MonoBehaviour
         if (_jumpInput > 0)
         {
             _isjumping = true;
-            Debug.Log("is Jumping");
         }
         else
         {
             _isjumping = false;
-            Debug.Log("is not Jumping");
 
         }
         
