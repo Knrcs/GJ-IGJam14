@@ -31,6 +31,8 @@ public class PlayerMovementNightmare : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 _tempScale;
 
+    public SFXManager sFXManager;
+
     // Start is called before the first frame update
     void Start()
     {
