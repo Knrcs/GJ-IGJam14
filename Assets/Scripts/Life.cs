@@ -78,7 +78,6 @@ public class Life : MonoBehaviour
         iframe -= Time.deltaTime;
         if (iframe < 0 && iframeResistance)
         {
-            Debug.Log("Iframe protection off");
             iframeResistance = false;
         }
     }

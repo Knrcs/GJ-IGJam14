@@ -15,14 +15,12 @@ public class DoDamage : MonoBehaviour
         {
             if (!playerlife.iframeResistance)
             {
-                Debug.Log("you got mail");
                 life.Damage(Amount);
                 playerlife.iframeResistance = true;
                 playerlife.iframe = playerlife.iframeTime;
             }
             else
             {
-                Debug.Log("iframe protection");
             }
         }
     }
