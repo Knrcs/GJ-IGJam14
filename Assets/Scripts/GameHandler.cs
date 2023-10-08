@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public enum GameState
 {
     None,
+    Transition,
     Nightmare,
     Dream,
     GameOver
@@ -14,6 +15,8 @@ public class GameHandler : Singleton<GameHandler>
 {
     public UnityEvent GameAwoken;
     public UnityEvent GameStarted;
+    public GameObject NightmareSegmentsParent;
+    public GameObject DreamSegmentsParent;
 
     public float OffsetYDeathFromAbove;
 
@@ -79,15 +82,8 @@ public class GameHandler : Singleton<GameHandler>
         State = GameState.Dream;
         MovementNightmare.enabled = false;
         MovementDream.enabled = true;
-        DeathFromAbove.SetActive(false);
-    }
 
-    private void ResetDeathFromAbove()
-    {
-        var posY = Player.transform.position.y + OffsetYDeathFromAbove;
-        var newPos = DeathFromAbove.transform.position;
-        newPos.y = posY;
-        DeathFromAbove.transform.position = newPos;
+        HideDeathFromAbove();
     }
 
     public void StartNightmare()
@@ -100,8 +96,61 @@ public class GameHandler : Singleton<GameHandler>
         State = GameState.Nightmare;
         MovementNightmare.enabled = true;
         MovementDream.enabled = false;
-        DeathFromAbove.SetActive(true);
         ResetDeathFromAbove();
+        ShowDeathFromAbove();
+    }
+
+    public void StartTransition()
+    {
+        if (State != GameState.Nightmare && State != GameState.Dream)
+        {
+            return;
+        }
+
+        if (DreamSegmentsParent == null || NightmareSegmentsParent == null)
+        {
+            Debug.Log("Dream Parent or Nightmare Paren is null!");
+            return;
+        }
+
+        if (State == GameState.Nightmare)
+        {
+            var pos = DreamSegmentsParent.transform.position;
+            pos.x = Player.transform.position.x;
+            DreamSegmentsParent.transform.position = pos;
+        }
+        else
+        {
+            var pos = NightmareSegmentsParent.transform.position;
+            pos.x = Player.transform.position.x;
+            NightmareSegmentsParent.transform.position = pos;
+        }
+
+        MovementNightmare.enabled = true;
+        MovementDream.enabled = false;
+
+        State = GameState.Transition;
+    }
+
+    private void ResetDeathFromAbove()
+    {
+        var posY = Player.transform.position.y + OffsetYDeathFromAbove;
+        var newPos = DeathFromAbove.transform.position;
+        newPos.y = posY;
+        newPos.x = Player.transform.position.x;
+        DeathFromAbove.transform.position = newPos;
+    }
+
+    public void ShowDeathFromAbove()
+    {
+        //TODO: Play Animation
+        DeathFromAbove.SetActive(true);
+    }
+
+    public void HideDeathFromAbove()
+    {
+        //TODO: Play Animation
+        DeathFromAbove.SetActive(false);
     }
 
     public void Lose()
