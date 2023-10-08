@@ -582,13 +582,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1386272822308149173, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1386272822308149173, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1252633399
+    - target: {fileID: 2008386530315204784, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
+      propertyPath: RigidbodyGravityScale
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4619589749317257710, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
       propertyPath: m_LocalPosition.x
