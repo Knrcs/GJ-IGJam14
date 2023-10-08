@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="bd91cfe7-4498-4f27-8dc2-98665025dd8d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InnoGameJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InnoGameJam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Dmg.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Dmg.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Fall.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Fall.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Jump.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Jump.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Run.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Anim Clips/Player_Run.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/KnrcScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/KnrcScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerAnimator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +39,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "knrc/SpikeFix",
+    "git-widget-placeholder": "knrc/PlayerAnimation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696721194750</updated>
-      <workItem from="1696721196289" duration="5283000" />
+      <workItem from="1696721196289" duration="6436000" />
     </task>
     <servers />
   </component>
