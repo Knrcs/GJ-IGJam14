@@ -12,6 +12,11 @@ public class PlayerAnimator : MonoBehaviour
     private InputAction _moveAction;
     private InputAction _jumpAction;
     private PlayerInput _playerInput;
+    
+    public Collider2D GroundCollider;
+    public ContactFilter2D GroundColliderFilter;
+    
+    private bool isGrounded;
     private bool _isjumping;
 
     private Vector2 _moveInput;
@@ -64,6 +69,11 @@ public class PlayerAnimator : MonoBehaviour
 
     private void OnGroundAnimation()
     {
+        var list = new List<Collider2D>();
+        var count = GroundCollider.OverlapCollider(GroundColliderFilter, list);
+
+        isGrounded = count > 0;
         
+        _animatior.SetBool("onGround", isGrounded);
     }
 }
