@@ -57,7 +57,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Sprites
+    path: Sprite
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -110,7 +110,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Sprites
+    path: Sprite
   m_FloatCurves: []
   m_PPtrCurves:
   - serializedVersion: 2
@@ -136,7 +136,7 @@ AnimationClip:
     - time: 1
       value: {fileID: 21300000, guid: 3641833291ffc4348af9bcc686a08fb5, type: 3}
     attribute: m_Sprite
-    path: Sprites
+    path: Sprite
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -148,7 +148,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3274790235
+      path: 850496168
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -157,7 +157,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3274790235
+      path: 850496168
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -166,7 +166,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3274790235
+      path: 850496168
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -250,7 +250,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Sprites
+    path: Sprite
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -298,7 +298,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Sprites
+    path: Sprite
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -346,7 +346,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Sprites
+    path: Sprite
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -403,7 +403,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Sprites
+    path: Sprite
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -460,7 +460,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Sprites
+    path: Sprite
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -517,7 +517,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Sprites
+    path: Sprite
     classID: 4
     script: {fileID: 0}
     flags: 0

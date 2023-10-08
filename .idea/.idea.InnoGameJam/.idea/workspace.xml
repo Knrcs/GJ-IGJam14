@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd91cfe7-4498-4f27-8dc2-98665025dd8d" name="Changes" comment="" />
+    <list default="true" id="bd91cfe7-4498-4f27-8dc2-98665025dd8d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DoDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DoDamage.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +14,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerAnimator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -26,7 +31,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "knrc/SpikeFix",
+    "git-widget-placeholder": "knrc/PlayerAnimation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696721194750</updated>
-      <workItem from="1696721196289" duration="3468000" />
+      <workItem from="1696721196289" duration="6740000" />
     </task>
     <servers />
   </component>
