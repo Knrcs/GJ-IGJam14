@@ -8,6 +8,7 @@ public class DoDamage : MonoBehaviour
     public int Amount;
     private Life playerlife;
     private bool _iframeForMe;
+    private Animator _animator;
     
     public void DamageTarget(GameObject target)
     {
@@ -16,6 +17,7 @@ public class DoDamage : MonoBehaviour
             if (!playerlife.iframeResistance)
             {
                 life.Damage(Amount);
+                _animator.SetTrigger("damage");
                 playerlife.iframeResistance = true;
                 playerlife.iframe = playerlife.iframeTime;
             }
@@ -28,6 +30,7 @@ public class DoDamage : MonoBehaviour
     private void Awake()
     {
         playerlife = GameObject.Find("Player").GetComponent<Life>();
+        _animator = GameObject.Find("Player").GetComponent<Animator>();
     }
 
     public void DamageThis()
