@@ -758,6 +758,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5833353166376416777, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
+      propertyPath: jumpSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: d940daac05180f72bb62a79711925243, type: 3}
+    - target: {fileID: 5833353166376416777, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
+      propertyPath: walkSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c45e30eeb87fbf279bc400d3e0df3f3, type: 3}
+    - target: {fileID: 5833353166376416777, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
+      propertyPath: damageSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ecd1652c717f005abb17e0369ef1bb5, type: 3}
+    - target: {fileID: 5833353166376416777, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
+      propertyPath: pickUpSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: fbe7369c989ea1141a8cc72c44f81872, type: 3}
+    - target: {fileID: 5833353166376416777, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
+      propertyPath: wakeUpSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e1819275f68fe546a60b32976fd4885, type: 3}
+    - target: {fileID: 5833353166376416777, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 121521916}
     - target: {fileID: 7763138160481802317, guid: ec9d00d636f3b9ac6a5b633b1b7aff8f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
